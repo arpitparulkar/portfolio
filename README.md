@@ -2,6 +2,8 @@
 
 A cinematic, responsive single-page portfolio built with Next.js App Router, TypeScript, and Tailwind CSS. All visual artwork is CSS-based; no stock or remote images are required.
 
+Display, serif, and monospace fonts are loaded with `next/font/google` and bundled into the production build.
+
 ## Run locally
 
 ```bash

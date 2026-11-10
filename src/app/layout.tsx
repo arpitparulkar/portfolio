@@ -1,5 +1,29 @@
 import type { Metadata, Viewport } from "next";
+import { Big_Shoulders, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+
+const displayFont = Big_Shoulders({
+  weight: ["800", "900"],
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  adjustFontFallback: false,
+});
+
+const serifFont = Instrument_Serif({
+  style: ["normal", "italic"],
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const monoFont = JetBrains_Mono({
+  weight: "variable",
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Arpit Parulkar — AI Engineer & Web Developer",
@@ -34,7 +58,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${displayFont.variable} ${serifFont.variable} ${monoFont.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
